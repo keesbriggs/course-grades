@@ -8,14 +8,14 @@ default: &default
 
 development:
   <<: *default
-  database: course_grades_development
+  database: course-grades_development
 
 
 test:
   <<: *default
   adapter: postgresql
-  database: course_grades_test
+  database: course-grades_test
 
 production:
   <<: *default
-  database: course_grades_production
+  database: course-grades_production
