@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/login'
+  get 'sessions/logout'
   get 'sessions/welcome'
   get 'authorized', to: 'sessions#page_requires_login'
   resources :enrollments
