@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :authorized, only: [:new, :create, :welcome]
+
   def new
   end
 
@@ -12,12 +13,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-     @user = User.find_by(username: params[:username])
+     @user = User.find_by(email: params[:email])
      if @user
-        sessions[:user_id] = @user.id
+        session[:user_id] = @user.id
         redirect_to '/users#show'
      else
-        redirect_to '/sessions/login'
+        redirect_to '/sessions/new'
      end
   end
   def page_requires_login
