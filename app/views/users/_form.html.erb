@@ -22,9 +22,11 @@
   </div>
 
   <div class="field">
-    <%= form.label :type %>
-    <%= form.text_field :type %>
+    <%= form.label :user_type %>
+    <%= form.select :user_type, options_for_select(["Student", "Teacher", "Admin"], disabled: ["Select One"]) %>
   </div>
+
+</select>
 
   <div class="actions">
     <%= form.submit %>

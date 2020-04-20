@@ -6,12 +6,12 @@ RSpec.describe "users/index", type: :view do
       User.create!(
         :name => "Name",
         :email => "Email",
-        :type => "Type"
+        :user_type => "User Type"
       ),
       User.create!(
         :name => "Name",
         :email => "Email",
-        :type => "Type"
+        :user_type => "User Type"
       )
     ])
   end
@@ -20,6 +20,6 @@ RSpec.describe "users/index", type: :view do
     render
     assert_select "tr>td", :text => "Name".to_s, :count => 2
     assert_select "tr>td", :text => "Email".to_s, :count => 2
-    assert_select "tr>td", :text => "Type".to_s, :count => 2
+    assert_select "tr>td", :text => "User Type".to_s, :count => 2
   end
 end
