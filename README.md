@@ -30,13 +30,32 @@ You will need Postgres installed. If you do not have Postgresql installed, you m
 ##### Clone the repository:
 
 ```
-git clone 
+git clone https://github.com/keesbriggs/course-grades.git
 ```
 
-* How to run the test suite
+##### Initial setup: 
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+# cd into course-grades folder
+# create the database, migrate and seed it:
 
-* Deployment instructions
+rake db:create db:migrate db:seed
 
-* ...
+# start the server:
+
+rails s
+
+```
+
+##### Logging in:
+
+The database is seeding this application to use my gmail account as well as yours (if you are reading this, you know who you are) as Teacher accounts, which are users of a specific type. Logging in with my email or yours will give you and 'admin' account which will grant you access to edit/destroy powers not available to Students. 
+
+
+##### Objects:
+
+There are User objects (which can have a user_type of 'Teacher' or 'Student'), Course Objects (which have a name and a score), Enrollment objects (a relationship between a Student and a Course).
+
+##### Abilities:
+
+A Student should be able to enroll or de-enroll in a course. They can see courses they are enrolled in. They can not delete or edit their scores for a course, or other users. A Teacher is an Admin, however, and can do anything.
