@@ -6,10 +6,50 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-    admins = User.create[
+    admins = User.create([
       { name: 'Abhinav Trivedi', email: 'atrivedi@mdsol.com', user_type: 'Admin' },
-      { name: 'Kees Briggs', email: 'kees.briggs@gmail.com', user_type: 'Admin' },
+      { name: 'Kees Briggs', email: 'kees.briggs@gmail.com', user_type: 'Admin' }
+    ])
+
+    students = User.create([
       { name: 'Sreekanth Devarapally', email: 'sdevarapally@gmail.com', user_type: 'Student' },
       { name: 'Rick Moranis', email: 'rmoranis@yahoo.com', user_type: 'Student' },
       { name: 'Bill Murray', email: 'bmurray@yahoo.com', user_type: 'Student' }
-    ]
+    ])
+
+    courses = Course.create([
+      { name: 'English 101' },
+      { name: 'English 102' },
+      { name: 'English 103' },
+      { name: 'English 104' },
+      { name: 'English 110' },
+      { name: 'English 111' },
+      { name: 'English 121' },
+      { name: 'English 131' },
+      { name: 'English 141' },
+      { name: 'English 151' },
+
+      { name: 'Computer Science 101' },
+      { name: 'Computer Science 102' },
+      { name: 'Computer Science 103' },
+      { name: 'Computer Science 110' },
+      { name: 'Computer Science 111' },
+      { name: 'Computer Science 201' },
+      { name: 'Computer Science 301' },
+      { name: 'Computer Science 401' },
+      { name: 'Computer Science 501' }
+    ])
+
+    enrollments = Enrollment.create([
+      { user_id: 3, course_id: 2 },
+      { user_id: 3, course_id: 3 },
+      { user_id: 3, course_id: 6 },
+
+      { user_id: 4, course_id: 1 },
+      { user_id: 4, course_id: 2 },
+      { user_id: 4, course_id: 3 },
+
+      { user_id: 5, course_id: 3 },
+      { user_id: 5, course_id: 4 },
+      { user_id: 5, course_id: 1 },
+    ])

@@ -1,5 +1,4 @@
 class EnrollmentsController < ApplicationController
-  before_action :set_enrollment, only: [:show, :edit, :update, :destroy]
 
   # GET /enrollments
   # GET /enrollments.json
@@ -25,6 +24,9 @@ class EnrollmentsController < ApplicationController
   # POST /enrollments.json
   def create
     @enrollment = Enrollment.new(enrollment_params)
+
+    user = User.find(enrollment_params[:user_id].to_i)
+    course = Course.find(enrollment_params[:course_id].to_i)
 
     respond_to do |format|
       if @enrollment.save
@@ -62,11 +64,6 @@ class EnrollmentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_enrollment
-      @enrollment = Enrollment.find(params[:id])
-    end
-
     # Only allow a list of trusted parameters through.
     def enrollment_params
       params.require(:enrollment).permit(:user_id, :course_id)

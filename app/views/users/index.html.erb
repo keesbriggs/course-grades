@@ -2,6 +2,10 @@
 
 <h1>Users</h1>
 
+<% if current_user.admin? %>
+  <h3>You are an Admin on this system.</h3>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -28,4 +32,6 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New User', new_user_path %> |
+<%= link_to 'Enrollments', enrollments_path %> |
+<%= link_to 'Courses', courses_path %>
