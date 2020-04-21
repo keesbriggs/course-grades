@@ -18,26 +18,28 @@
     ])
 
     courses = Course.create([
-      { name: 'English 101' },
-      { name: 'English 102' },
-      { name: 'English 103' },
-      { name: 'English 104' },
-      { name: 'English 110' },
-      { name: 'English 111' },
-      { name: 'English 121' },
-      { name: 'English 131' },
-      { name: 'English 141' },
-      { name: 'English 151' },
+      { name: 'English 101', teacher_id: User.where(name: 'Abhinav Trivedi').first.id },
+      { name: 'English 102', teacher_id: User.where(name: 'Kees Briggs').first.id },
+      { name: 'English 103', teacher_id: User.where(name: 'Abhinav Trivedi').first.id },
+      { name: 'English 104', teacher_id: User.where(name: 'Kees Briggs').first.id },
+      { name: 'English 110', teacher_id: User.where(name: 'Abhinav Trivedi').first.id },
+      { name: 'English 111', teacher_id: User.where(name: 'Kees Briggs').first.id },
+      { name: 'English 121', teacher_id: User.where(name: 'Abhinav Trivedi').first.id },
+      { name: 'English 131', teacher_id: User.where(name: 'Kees Briggs').first.id },
+      { name: 'English 141', teacher_id: User.where(name: 'Abhinav Trivedi').first.id },
+      { name: 'English 151', teacher_id: User.where(name: 'Kees Briggs').first.id },
+      { name: 'English 441', teacher_id: User.where(name: 'Abhinav Trivedi').first.id },
 
-      { name: 'Computer Science 101' },
-      { name: 'Computer Science 102' },
-      { name: 'Computer Science 103' },
-      { name: 'Computer Science 110' },
-      { name: 'Computer Science 111' },
-      { name: 'Computer Science 201' },
-      { name: 'Computer Science 301' },
-      { name: 'Computer Science 401' },
-      { name: 'Computer Science 501' }
+      { name: 'Computer Science 101', teacher_id: User.where(name: 'Kees Briggs').first.id },
+      { name: 'Computer Science 102', teacher_id: User.where(name: 'Abhinav Trivedi').first.id },
+      { name: 'Computer Science 103', teacher_id: User.where(name: 'Kees Briggs').first.id },
+      { name: 'Computer Science 110', teacher_id: User.where(name: 'Abhinav Trivedi').first.id },
+      { name: 'Computer Science 111', teacher_id: User.where(name: 'Kees Briggs').first.id },
+      { name: 'Computer Science 201', teacher_id: User.where(name: 'Abhinav Trivedi').first.id },
+      { name: 'Computer Science 301', teacher_id: User.where(name: 'Kees Briggs').first.id },
+      { name: 'Computer Science 401', teacher_id: User.where(name: 'Abhinav Trivedi').first.id },
+      { name: 'Computer Science 501', teacher_id: User.where(name: 'Kees Briggs').first.id },
+      { name: 'Computer Science 401', teacher_id: User.where(name: 'Abhinav Trivedi').first.id }
     ])
 
     enrollments = Enrollment.create([

@@ -27,8 +27,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    byebug # user_params
-
     session[:user_id] = @user.id
 
     respond_to do |format|

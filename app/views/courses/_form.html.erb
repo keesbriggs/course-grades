@@ -16,6 +16,11 @@
     <%= form.text_field :name %>
   </div>
 
+   <div class="field">
+    <%= form.label :name %>
+    <%= form.select :teacher_id, options_for_select(User.where(user_type: 'Teacher').collect { | teacher | [teacher.name, teacher.id] }, nil), {}, {} %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

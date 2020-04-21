@@ -10,6 +10,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Teacher</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
     <% @courses.each do |course| %>
       <tr>
         <td><%= course.name %></td>
+        <td><%= course.teacher %></td>
         <td><%= link_to 'Show', course %></td>
         <% if current_user.teacher? %>
           <td><%= link_to 'Edit', edit_course_path(course) %></td>

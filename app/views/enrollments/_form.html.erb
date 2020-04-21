@@ -20,7 +20,6 @@
 
   <div class="field">
     <%= form.label :course_id %>
-    <% courses_array = Course.all.map { |course| [course.name, course.id] } %>
     <%= form.select :course_id, options_for_select(Course.all.collect { | course | [course.name, course.id] }, nil), {}, {} %>
   </div>
 
