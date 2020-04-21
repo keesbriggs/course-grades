@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = current_user.teacher? ? User.all : User.where(id: current_user.id)
   end
 
   # GET /users/1

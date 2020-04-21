@@ -5,7 +5,7 @@ class EnrollmentsController < ApplicationController
   # GET /enrollments
   # GET /enrollments.json
   def index
-    @enrollments = Enrollment.all
+    @enrollments = current_user.teacher? ? Enrollment.all : Enrollment.where(user_id: current_user.id)
   end
 
   # GET /enrollments/1
