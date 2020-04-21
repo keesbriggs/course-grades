@@ -8,15 +8,12 @@ class User < ApplicationRecord
   validates :user_type, presence: true
   validates :name, presence: true
   validates :email, uniqueness: true
-  validates :user_type, acceptance: { accept: ['Admin', 'Teacher', 'Student'] }
+  validates :user_type, acceptance: { accept: ['Teacher', 'Student'] }
 
-  validates_uniqueness_of :name, scope: [:course_id, :user_type]
+  validates_uniqueness_of :name, scope: :user_type
 
-  def admin?
-    user_type == 'Admin'
+  def teacher?
+    user_type == 'teacher'
   end
 
-  def not_student?
-    user_type != 'Student'
-  end
 end

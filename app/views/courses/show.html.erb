@@ -4,7 +4,7 @@
   <strong>Name:</strong>
   <%= @course.name %>
 </p>
-<% if current_user.admin? %>
+<% if current_user.teacher? %>
   <%= link_to 'Edit', edit_course_path(@course) %> |
 <% end %>
 <%= link_to 'Back', courses_path %>

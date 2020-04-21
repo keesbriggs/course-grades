@@ -8,6 +8,8 @@ class Enrollment < ApplicationRecord
 
   validates_uniqueness_of :user_id, scope: :course_id
 
+  validates :score, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 100,  only_integer: true }
+
   def course_name
     Course.find(course_id).name || "None"
   end

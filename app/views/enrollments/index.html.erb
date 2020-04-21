@@ -2,7 +2,7 @@
 
 <h1>Enrollments</h1>
 
-<% if current_user.admin? %>
+<% if current_user.teacher? %>
   <h3>You are an Admin on this system.</h3>
 <% end %>
 
@@ -22,7 +22,7 @@
         <td><%= enrollment.course_name %></td>
         <td><%= link_to 'Show', enrollment %></td>
 
-        <% if current_user.admin? %>
+        <% if current_user.teacher? %>
           <td><%= link_to 'Un-enroll', enrollment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
@@ -34,4 +34,5 @@
 
 <%= link_to 'New Enrollment', new_enrollment_path %> |
 <%= link_to 'Users', users_path %> |
-<%= link_to 'Courses', courses_path %>
+<%= link_to 'Courses', courses_path %> |
+<%= link_to 'Home', '/sessions/welcome' %>

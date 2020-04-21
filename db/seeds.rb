@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-    admins = User.create([
-      { name: 'Abhinav Trivedi', email: 'atrivedi@mdsol.com', user_type: 'Admin' },
-      { name: 'Kees Briggs', email: 'kees.briggs@gmail.com', user_type: 'Admin' }
+    teachers = User.create([
+      { name: 'Abhinav Trivedi', email: 'atrivedi@mdsol.com', user_type: 'Teacher' },
+      { name: 'Kees Briggs', email: 'kees.briggs@gmail.com', user_type: 'Teacher' }
     ])
 
     students = User.create([
