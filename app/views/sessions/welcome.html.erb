@@ -2,9 +2,10 @@
 <% if logged_in? %>
     <h1>You are Logged In, <%= current_user.name %></h1>
     <%= button_to "Logout", '/sessions/logout', method: :get%>
+    <%= current_user.inspect %>
     <p> You are a(n) <%= current_user.user_type %> at Acme High School!</p>
-    <%= button_to "Enrollments", '/enrollments/show', method: :get%>
-    <%= button_to "Courses", '/courses/show', method: :get%>
+    <%= button_to "Enrollments", '/enrollments', method: :get%>
+    <%= button_to "Courses", '/courses', method: :get%>
 <% else %>
   <%= button_to "Login", '/sessions/new', method: :get%>
   <%= button_to "Sign Up", '/users/new', method: :get%>

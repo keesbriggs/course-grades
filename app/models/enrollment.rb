@@ -11,10 +11,10 @@ class Enrollment < ApplicationRecord
   validates :score, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 100,  only_integer: true }
 
   def course_name
-    Course.find(course_id).name || "None"
+    Course.find(course_id).name
   end
 
     def user_name
-    User.find(user_id).name || "None"
+    User.find(user_id).name
   end
 end

@@ -41,11 +41,11 @@
     ])
 
     enrollments = Enrollment.create([
-      { user_id: 3, course_id: 2 },
-      { user_id: 3, course_id: 3 },
-      { user_id: 3, course_id: 6 },
+      { user_id: 3, course_id: 2, score: 67 },
+      { user_id: 3, course_id: 3, score: 78 },
+      { user_id: 3, course_id: 6, score: 89 },
 
-      { user_id: 4, course_id: 1 },
+      { user_id: 4, course_id: 1, score: 98 },
       { user_id: 4, course_id: 2 },
       { user_id: 4, course_id: 3 },
 

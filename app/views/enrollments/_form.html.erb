@@ -24,6 +24,11 @@
     <%= form.select :course_id, options_for_select(Course.all.collect { | course | [course.name, course.id] }, nil), {}, {} %>
   </div>
 
+  <div class="field">
+    <%= form.label :score %>
+    <%= form.text_field :score %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

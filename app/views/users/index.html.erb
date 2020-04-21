@@ -2,7 +2,7 @@
 
 <h1>Users</h1>
 
-<% if current_user.admin? %>
+<% if current_user.teacher? %>
   <h3>You are an Admin on this system.</h3>
 <% end %>
 
@@ -23,8 +23,10 @@
         <td><%= user.email %></td>
         <td><%= user.user_type %></td>
         <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.teacher? %>
+          <td><%= link_to 'Edit', edit_user_path(user) %></td>
+          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -35,4 +37,5 @@
 <%= link_to 'New User', new_user_path %> |
 <%= link_to 'Enrollments', enrollments_path %> |
 <%= link_to 'Courses', courses_path %> |
-<%= link_to 'Home', '/sessions/welcome' %>
+<%= link_to 'Home', '/sessions/welcome' %> |
+<%= link_to 'Log Out', '/sessions/logout' %>

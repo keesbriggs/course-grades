@@ -1,4 +1,6 @@
 class EnrollmentsController < ApplicationController
+  before_action :set_enrollment, only: [:show, :edit, :update, :destroy]
+
 
   # GET /enrollments
   # GET /enrollments.json
@@ -9,6 +11,8 @@ class EnrollmentsController < ApplicationController
   # GET /enrollments/1
   # GET /enrollments/1.json
   def show
+    @course_name = @enrollment.course_name
+    @user_name = @enrollment.user_name
   end
 
   # GET /enrollments/new
@@ -64,8 +68,12 @@ class EnrollmentsController < ApplicationController
   end
 
   private
+    def set_enrollment
+      @enrollment = Enrollment.find(params[:id])
+    end
+
     # Only allow a list of trusted parameters through.
     def enrollment_params
-      params.require(:enrollment).permit(:user_id, :course_id)
+      params.require(:enrollment).permit(:user_id, :course_id, :score)
     end
 end

@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates_uniqueness_of :name, scope: :user_type
 
   def teacher?
-    user_type == 'teacher'
+    user_type == 'Teacher'
   end
 
 end
